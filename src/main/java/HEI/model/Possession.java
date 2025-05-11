@@ -10,7 +10,9 @@ import java.time.LocalDate;
 public abstract sealed class Possession permits Compte, Materiel, TrainDeVie {
     private final String nom;
     private final LocalDate aDateDe;
-    private final Double valeur ;
+    private final Argent valeur ;
+
+    public abstract Possession projectionFuture(LocalDate dateFuture);
 
 
 
