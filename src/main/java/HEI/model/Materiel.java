@@ -1,13 +1,18 @@
 package HEI.model;
 
+import java.time.LocalDate;
+
 public final class Materiel  extends Possession{
     private final Double tauxDAppreciiation;
-    private final Double valeur;
+    private final LocalDate dateDAcquisition;
 
-    public Materiel(String nom, Devise devise, Argent valeur, Double tauxDapreciation, Double tauxDAppreciiation, Double valeur1) {
-        super(nom, devise, valeur, tauxDapreciation);
+    public Materiel(String nom, LocalDate aDateDe, Argent valeur, Double tauxDAppreciiation, LocalDate dateDAcquisition) {
+        super(nom, aDateDe, valeur);
         this.tauxDAppreciiation = tauxDAppreciiation;
-        this.valeur = valeur1;
+        this.dateDAcquisition = dateDAcquisition;
     }
-
+    @Override
+    public Possession projectionFuture(LocalDate dateFuture){
+        return null;
+    }
 }
