@@ -52,7 +52,10 @@ public final class Materiel extends Possession {
     @Override
     public String toString() {
         return "Materiel{" +
-                "dateDAcquisition=" + dateDAcquisition +
+                "nom de la possession = "+this.getNomDeLaPossession()+
+                ", a date de = " + this.getADateDe() +
+                ", valeur = " + this.getValeur() +
+                ", dateDAcquisition=" + dateDAcquisition +
                 ", tauxDAppreciation=" + tauxDAppreciation +
                 '}';
     }
