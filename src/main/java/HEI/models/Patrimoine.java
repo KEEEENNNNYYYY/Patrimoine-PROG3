@@ -12,7 +12,17 @@ public class Patrimoine {
     private final Set<Possession> possessions;
 
     public Double projectionFuture(LocalDate dateFuture) {
-
-        return 0.0;
+        Double totale = 0.0;
+        for (Possession possession : possessions) {
+            if (possession instanceof Compte compte) {
+                totale += compte.getValeur().getMontant();
+            } else if (possession instanceof Materiel materiel) {
+                totale += materiel.getValeur().getMontant();
+            } else if (possession instanceof TrainDeVie trainDeVie) {
+                totale += trainDeVie.getValeur().getMontant();
+            }
+        }
+        System.out.println("Total : " + totale);
+        return totale;
     }
 }
